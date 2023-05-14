@@ -1,0 +1,58 @@
+#Projects{
+  .swiper{
+    @include wh(100%,100%);
+    margin-bottom: 2rem;
+
+    .swiper-wrapper{
+      @include wh(max-content,max-content);
+      @include flex(center,center);
+
+      .swiper-slide{
+        @include wh(30rem, 20rem);
+        background: #000;
+        transition: all .2s ease-in-out;
+        border: 1px solid #000;
+        position: relative;
+        transform: scale(.85);
+        border-radius: .5rem;
+
+        &:hover{
+          img{
+            opacity: .5;
+          }
+
+          .text-content{
+            opacity: 1;
+          }
+        }
+
+        &.swiper-slide-active{
+          transform: scale(1);
+        }
+        
+        img{
+          @include wh(100%,100%);
+          object-fit: cover;
+          border-radius: .5rem;
+        }
+
+        .text-content{
+          @include wh(100%,100%);
+          @include flex(center,center,column,.5rem);
+          position: absolute;
+          opacity: 0;
+          inset: 0;
+
+          h3{
+            @include text-details(500, 2rem, #FFF);
+          }
+
+
+          div{
+            @include flex(center,center,row,.5rem);
+          }
+        }
+      }
+    }
+  }
+}

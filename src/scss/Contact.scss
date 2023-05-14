@@ -1,0 +1,41 @@
+#contact{
+
+  .contact-box{
+    @include wh(100%,100%);
+    @include flex(center, center, column, 2.5rem);
+    margin-bottom: 2.5rem;
+
+    h2{
+      @include text-details(600, 3.5rem);
+    }
+
+    .icons-contains{
+      @include flex(space-between, center, row, 1.25rem);
+      width: 80%;
+    }
+
+    .icon-box{
+      @include flex(center, center, column, 1rem);
+      //all: unset; //remove todos os valores padrões de css
+      cursor: pointer;
+      border: 1px solid transparent;
+      padding: .625rem;
+      border-radius: .5rem;
+      color: #FFF;
+      
+      svg{
+        @include wh(5rem,5rem);
+      }
+
+      p{
+        @include text-details(400, 1rem);
+        max-width: 10ch;
+        text-align: center;
+      }
+
+      &:hover{
+        border-color: #FFF;
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+@mixin flex($justify, $align, $direction: row, $gap: 0){
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+@mixin wh($width, $heigth){
+  width: $width;
+  height: $heigth;
+}
+
+@mixin text-details($weight, $size, $color: #FFF, $line: 100%, $letterSpace: normal){
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line;
+  color: $color;
+  letter-spacing: $letterSpace;
+}

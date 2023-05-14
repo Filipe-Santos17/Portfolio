@@ -1,0 +1,89 @@
+#Intro {
+  header{
+    position: fixed;
+    z-index: 10;
+    @include wh(100%, 3rem);
+    background-color: rgba($color: #000, $alpha: .8);
+
+    ul{
+      @include flex(space-around,center);
+      @include wh(100%, 100%);
+
+
+      li{
+        cursor: pointer;
+        text-transform: uppercase;
+
+        a{
+          @include text-details(400, 1rem, #FFF);
+
+          &:hover{
+            text-decoration: underline;//Simular com animação
+          }
+        }
+      }
+    }
+  }
+
+  .banner{
+    position: relative;
+    @include wh(100vw,100vh);
+
+    .img-wrapper{
+      @include wh(100%,100%);
+      background-color: rgba($color: #000, $alpha: .8);
+
+      @keyframes changeBackground {
+        from {
+          opacity: 1;
+        }
+
+        to {
+          opacity: 0;
+        }
+      }
+
+      .change-bgImg{
+        animation: changeBackground 3s forwards;
+      }
+
+      .selected{
+        z-index: 5;
+      }
+
+      img{
+        @include wh(100%,100%);
+        object-fit: cover;
+        position: absolute;
+      }
+    }
+
+    .text-title{
+      position: absolute;
+      inset: 0;
+      z-index: 8;
+
+      .texts{
+        @include flex(center,center,column,.5rem);
+        @include wh(100%,100%);
+
+        h3{
+          //($weight, $size, $line, $color: #000, $letterSpace: normal){
+          @include text-details(500, 2rem, #FFF);
+        }
+
+        h1{
+          @include text-details(700, 5rem, #FFF);
+        }
+
+        h2{
+          @include text-details(500, 1.5rem, #FFF);
+        }
+
+        .container-buttons{
+          @include flex(center,center,row,.5rem);
+        }
+      }
+    }
+  }
+}
